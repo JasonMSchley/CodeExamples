@@ -5,23 +5,20 @@ public class DataLord {
     //Write a class called DataLord that has 1 method called NumAccounts. 
     //This method should return the number of Accounts that exist in org
     public static Integer NumAccounts() {
-        Integer numAccounts = [SELECT COUNT() FROM Account];
-        return numAccounts;
+        return  [SELECT COUNT() FROM Account];
     }
 
     //Challenge II
     //Write a method called NumHot. This method should return the number of Accounts with a Rating of Hot
     public static Integer NumHot() {
-        Integer numHotAccounts = [SELECT COUNT() FROM Account WHERE Rating = 'Hot'];
-        return numHotAccounts;
+        return [SELECT COUNT() FROM Account WHERE Rating = 'Hot'];
     }
 
     //Challenge III
     //Write a method called NumComplex. This method should return the number of Accounts that have an ampersand (&) in the Name
     public static Integer NumComplex() {
-        Integer numComplexAccounts = [SELECT COUNT() FROM Account WHERE Name LIKE '%&%'];
-        return numComplexAccounts;
-    }
+        return [SELECT COUNT() FROM Account WHERE Name LIKE '%&%'];
+     }
 
     //Challenge IV
     //Write a method called BigFive. This method should return the top 5 Accounts in terms of Annual Revenue. 
@@ -52,12 +49,13 @@ public class DataLord {
     //Write a method called MostPopularAccount. This method should return the Account Name that has the most associated Contacts.
     public static String MostPopularAccount() {
         List<AggregateResult> results = [SELECT AccountId, COUNT(Id) contactCount FROM Contact GROUP BY AccountId ORDER BY COUNT(Id) DESC LIMIT 1];
-        if (!results.isEmpty()) {
-            Id mostPopularAccountId = (Id)results[0].get('AccountId');
-            Account mostPopularAccount = [SELECT Name FROM Account WHERE Id = :mostPopularAccountId];
-            return mostPopularAccount.Name;
+        if (results.isEmpty()){
+            return null;
         }
-        return null;
+
+        Id mostPopularAccountId = (Id)results[0].get('AccountId');
+        Account mostPopularAccount = [SELECT Name FROM Account WHERE Id = :mostPopularAccountId];
+        return mostPopularAccount.Name;
     }
 
 
