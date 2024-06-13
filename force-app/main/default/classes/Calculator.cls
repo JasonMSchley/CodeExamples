@@ -23,9 +23,9 @@ public class Calculator {
             isNegative = true;
          }
 
-         //multiply A and B
+         //multiply A and B (add B number of A together)
         for (Integer c=0; c<b; c++){
-            total = add(c,a);
+            total = add(total,a);
         }
 
         //if B was negative return negative version
