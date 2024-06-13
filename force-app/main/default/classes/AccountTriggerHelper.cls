@@ -2,7 +2,7 @@ public class AccountTriggerHelper {
 
 
     //************************************************before delete triggers********************** */
-    //extra Trigger challenge
+    //Trigger challenge Extra
     //Write an Apex trigger that stops the deletion of an account record if it 
     //has any related opportunity records that are still open.
     public static void ProtectAccountOpenOpportunities(List<Account> accounts) {
@@ -20,8 +20,7 @@ public class AccountTriggerHelper {
             WHERE AccountId 
             IN :accountIds 
                 AND StageName != 'Closed Won' 
-                AND StageName != 'Closed Lost'
-        ];
+                AND StageName != 'Closed Lost'];
 
         // Create a Set of accounts that have open opportunities
         Set<Id> accountsWithOpenOpportunities = new Set<Id>();
