@@ -42,7 +42,11 @@ public class Car extends Vehicle {
         super.Media.add(Medium.LAND);
         }
      
-
+    //Implement Turn to rotate the SteeringRotation by the specified amount, in degrees, and the TireRotate by 1/16th the specified amount, in degrees
+    public override void Turn(integer rotationAngle) {
+        this.SteeringRotation += (Integer)rotationAngle;
+        this.TireRotation += (Integer)(rotationAngle / 16);
+    }
     //Challenge IV
     //Make the following modifications to Car:
     //Implement constructor chaining to allow inputs for values that Vehicle's constructor sets        
@@ -53,11 +57,10 @@ public class Car extends Vehicle {
         super.Media.add(Medium.LAND); 
     }
 
-
-
-    //Implement Turn to rotate the SteeringRotation by the specified amount, in degrees, and the TireRotate by 1/16th the specified amount, in degrees
-    public override void Turn(integer rotationAngle) {
-        this.SteeringRotation += (Integer)rotationAngle;
-        this.TireRotation += (Integer)(rotationAngle / 16);
+    //Override the Accelerate function to call the base implementation, and then set the Gear via the following equation: 
+    //Gear = (Integer)Math.ceil(0.4444 * (Math.sqrt(Speed)))
+    public override void Accelerate(Integer acceleration) {
+        super.Accelerate(acceleration);
+        this.Gear = (Integer)Math.ceil(0.4444 * (Math.sqrt(super.Speed)));
     }
 }

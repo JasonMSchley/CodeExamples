@@ -41,6 +41,19 @@ public abstract class Vehicle {
         final Integer Capacity = 1;  //A constant called Capacity. This must be at least 1
     }
 
+    // A method called Accelerate which changes Speed by the specified amount
+    public virtual void Accelerate(Integer acceleration) {
+        this.Speed += acceleration;
+    }
+
+    // Abstract method for turning
+    public virtual void Turn(Integer rotationAngle) {
+    }
+
+    // A method called ToString that prints out the current Speed, all Media, the Name, and the number of Occupants
+    public override String ToString() {
+        return 'Speed: ' + Speed + ', Media: ' + ', Media: ' + media + ', Name: ' + Name + ', Occupants: ' + Occupants;
+    }
 
     //Challenge IV
     //Make the following modifications to Vehicle:
@@ -52,20 +65,5 @@ public abstract class Vehicle {
         this.Name = N;
         if (C<1){C=1;}              //A constant called Capacity. This must be at least 1
         final Integer Capacity = C;  
-    }
-
-
-    // A method called Accelerate which changes Speed by the specified amount
-    public void Accelerate(Integer acceleration) {
-        this.Speed += acceleration;
-    }
-
-    // Abstract method for turning
-    public virtual void Turn(Integer rotationAngle) {
-    }
-
-    // A method called ToString that prints out the current Speed, all Media, the Name, and the number of Occupants
-    public override String ToString() {
-        return 'Speed: ' + Speed + ', Media: ' + ', Media: ' + media + ', Name: ' + Name + ', Occupants: ' + Occupants;
     }
 }
