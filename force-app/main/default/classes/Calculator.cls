@@ -81,5 +81,4 @@ public class Calculator {
         // Return the remainder
         return remainder;
     }
-
 }
