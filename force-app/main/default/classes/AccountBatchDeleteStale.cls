@@ -16,7 +16,7 @@ global class AccountBatchDeleteStale implements Database.Batchable<sObject> {
             'SELECT Id ' +
             'FROM Account ' +
             'WHERE NOT IN ' +
-               '(SELECT AccountId FROM Opportunity WHERE CloseDate >= LAST_N_MONTHS:6)');
+               '(SELECT AccountId FROM Opportunity WHERE isClosed = false AND LastModifiedDate < LAST_N_MONTHS:6');
     }
 
     global void execute(Database.BatchableContext BC, List<sObject> records) {
