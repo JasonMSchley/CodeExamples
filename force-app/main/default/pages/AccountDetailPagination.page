@@ -1,0 +1,28 @@
+<!--Challenge II
+Modify your Visualforce page to display a paginated table of Accounts.-->
+
+
+<apex:page controller="AccountDetailPaginationController">
+    <apex:form>
+        <apex:pageBlock title="Accounts List">
+            <apex:pageBlockTable value="{!accounts}" var="account">
+                <apex:column headerValue="Name">
+                    <apex:outputLink value="/{!account.Id}">{!account.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!account.Phone}" headerValue="Phone"/>
+                <apex:column value="{!account.Industry}" headerValue="Industry"/>
+                <apex:column value="{!account.Type}" headerValue="Type"/>
+                <apex:column value="{!account.AnnualRevenue}" headerValue="Annual Revenue"/>
+                <apex:column value="{!account.Website}" headerValue="Website"/>
+            </apex:pageBlockTable>
+
+            <apex:panelGroup layout="block" styleClass="pagination">
+                <apex:commandButton action="{!previousPage}" value="Previous" 
+                                    rerender="accountsTable" disabled="{!pageNumber == 1}"/>
+                <apex:outputText value="Page {!pageNumber} of {!totalPages}"/>
+                <apex:commandButton action="{!nextPage}" value="Next" 
+                                    rerender="accountsTable" disabled="{!pageNumber == totalPages}"/>
+            </apex:panelGroup>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

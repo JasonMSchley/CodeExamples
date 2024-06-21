@@ -1,0 +1,17 @@
+<!--Challenge I
+Create a Visualforce page that displays a single Account, specified as a parameter in the URL.-->
+
+<apex:page standardController="Account">
+    <apex:form>
+        <apex:pageBlock title="Account Details">
+            <apex:pageBlockSection title="Account Information">
+                <apex:outputField value="{!Account.Name}" label="Name"/>
+                <apex:outputField value="{!Account.Phone}" label="Phone"/>
+                <apex:outputField value="{!Account.Industry}" label="Industry"/>
+                <apex:outputField value="{!Account.Type}" label="Type"/>
+                <apex:outputField value="{!Account.AnnualRevenue}" label="Annual Revenue"/>
+                <apex:outputField value="{!Account.Website}" label="Website"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

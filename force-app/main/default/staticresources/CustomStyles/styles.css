@@ -1,0 +1,35 @@
+/* styles.css */
+
+/* Style for Account Details section */
+.account-details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Style for Account Information section */
+.account-info-section {
+    margin-bottom: 20px;
+}
+
+/* Style for About Me section */
+.about-section {
+    margin-top: 20px;
+}
+
+/* Style for Download button/link */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #0070d2;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #005aa3;
+}

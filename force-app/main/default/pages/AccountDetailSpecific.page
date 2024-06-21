@@ -1,0 +1,51 @@
+<!--Challenge III
+Modify your Visualforce page to display a single Account, 
+but this time the Account should always be the same, regardless of the parameter in the URL. 
+You may not use a Standard Controller.-->
+
+<!--Challenge IV
+Add to your Visualforce page an About Me section. 
+This should simply be a paragraph about yourself. 
+However, this paragraph should be translated to Spanish if the current viewing user has their language set to Spanish. 
+Download this creation as a PDF.-->
+
+<!--Challenge VI
+Add functionality to your Visualforce page to add a greeting to the page. 
+This greeting should include the Name of the Account specified as a parameter in the URL, 
+and should only display once you click a button.-->
+
+<apex:page controller="AccountDetailSpecificController" renderAs="{!IF(isPdf, 'pdf', 'html')}">
+    <apex:stylesheet value="{!URLFOR($Resource.CustomStyles, 'styles.css')}"/>
+
+    <apex:form>
+        <div class="account-details">
+            <apex:pageBlock title="Account Details">
+                <div class="account-info-section">
+                    <apex:pageBlockSection title="Account Information" columns="1">
+                        <apex:outputField value="{!account.Name}" label="Name"/>
+                        <apex:outputField value="{!account.Phone}" label="Phone"/>
+                        <apex:outputField value="{!account.Industry}" label="Industry"/>
+                        <apex:outputField value="{!account.Type}" label="Type"/>
+                        <apex:outputField value="{!account.AnnualRevenue}" label="Annual Revenue"/>
+                        <apex:outputField value="{!account.Website}" label="Website"/>
+                    </apex:pageBlockSection>
+                </div>
+                <div class="about-section">
+                    <apex:pageBlockSection title="About Me">
+                        <apex:outputText value="{!aboutMe}"/>
+                    </apex:pageBlockSection>
+                </div>
+                <div class="greeting-section">
+                    <apex:pageBlockSection title="Greeting">
+                        <apex:outputPanel id="greetingSection" layout="block">
+                            <apex:outputText value="{!greeting}" rendered="{!showGreeting}"/>
+                        </apex:outputPanel>
+                        <apex:commandButton value="Show Greeting" action="{!generateGreeting}" rerender="greetingSection" styleClass="btn"/>
+                    </apex:pageBlockSection>
+                </div>
+            </apex:pageBlock>
+        </div>
+        <!-- Download button/link -->
+        <apex:commandButton value="Download as PDF" action="{!downloadPdf}" styleClass="btn"/>
+    </apex:form>
+</apex:page>
