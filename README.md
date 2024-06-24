@@ -182,7 +182,7 @@ Create a trigger to create a new related Contact when an Account is inserted.
 Create a trigger to update the phone field of the related Account when a Contact's phone field is updated. The Account and Contact should end up having the same value in their phone fields.
 - [ContactTriggerHelper.cls](/force-app/main/default/classes/AccountTriggerHelper.cls)
 ### Create Test Class
-- [ContactTriggerHelperTest.cls](/force-app/main/default/classes/AccountTriggerHelperTest.cls)
+- [ContactTriggerHelperTests.cls](/force-app/main/default/classes/AccountTriggerHelperTest.cls)
 
 ### Elite Challenge I
 Universal Containers has recently had some issues with Contacts being inserted with duplicate phone numbers by accident. A developer has recently cleaned all Contacts from having duplicate phone numbers, but they want you to make sure this doesn't happen in the future. Use a trigger to solve the above problem.

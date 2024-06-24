@@ -1,14 +1,10 @@
-public class AccountDetailInputController {
+public class AccountDetailInputController{
     public String accountName { get; set; }
     public Account account { get; private set; }
 
-    public AccountDetailInputController(ApexPages.StandardController sc) {
-        super(sc);
+    public AccountDetailInputController(ApexPages.StandardController stdController) {
+        this.account = (account)stdController.getRecord();
     }
-    
-    public AccountDetailInputController(ApexPages.StandardSetController sc) {
-    }
-
     // Method to find and display the account based on user input
     public PageReference findAccount() {
         if (String.isEmpty(accountName)) {
@@ -17,7 +13,7 @@ public class AccountDetailInputController {
         } else {
             try {
                 String sanitizedQuery = String.escapeSingleQuotes(accountName);
-                this.account = [SELECT Id, Name, Phone, Industry, Type, AnnualRevenue, Website 
+                account = [SELECT Id, Name, Phone, Industry, Type, AnnualRevenue, Website 
                            FROM Account 
                            WHERE Name = :sanitizedQuery 
                            LIMIT 1];              

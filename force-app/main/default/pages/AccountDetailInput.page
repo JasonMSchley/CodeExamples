@@ -1,5 +1,5 @@
 <!--Create a Visualforce page that displays an Account based off of user input.-->
-<apex:page standardController="Account" recordSetVar="accs" extensions="AccountDetailInputController">
+<apex:page standardController="Account" extensions="AccountDetailInputController">
     <apex:form>
         <apex:pageBlock title="Find Account">
             <apex:pageMessages id="messages"/>
