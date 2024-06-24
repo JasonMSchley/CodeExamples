@@ -1,0 +1,25 @@
+<!--Create a Visualforce page that displays an Account based off of user input.-->
+<apex:page standardController="Account" recordSetVar="accs" extensions="AccountDetailInputController">
+    <apex:form>
+        <apex:pageBlock title="Find Account">
+            <apex:pageMessages id="messages"/>
+            <apex:pageBlockSection title="Enter Account Name" columns="1">
+                <apex:inputText value="{!accountName}" label="Account Name" />
+                <apex:commandButton value="Find Account" action="{!findAccount}" rerender="accountDetails, messages" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Account Details" id="accountDetails" rendered="{!account != null}">
+            <apex:pageBlockSection title="Account Information" columns="1">
+                <apex:outputText value="Account details section rerendered." />
+                <apex:outputField value="{!account.Name}" label="Name"/>
+                <apex:outputField value="{!account.Phone}" label="Phone"/>
+                <apex:outputField value="{!account.Industry}" label="Industry"/>
+                <apex:outputField value="{!account.Type}" label="Type"/>
+                <apex:outputField value="{!account.AnnualRevenue}" label="Annual Revenue"/>
+                <apex:outputField value="{!account.Website}" label="Website"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+
