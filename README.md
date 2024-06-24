@@ -242,6 +242,8 @@ Create a Visualforce page that displays an Account based off of user input.
 
 ## Challenge VIII
 Add to your Visualforce page the functionality to display all related Contacts of the Account as an unformatted list of names.
+- [AccountDetailInput.page](/force-app/main/default/pages/AccountDetailInput.page)
+- [AccountDetailInputController.cls](/force-app/main/default/classes/AccountDetailInputController.cls)
 
 ## Challenge IX
 Create a Visualforce page that displays all Accounts in the system and all their related Contact Names in the same table. The Contact names should be separated by a comma and a space.

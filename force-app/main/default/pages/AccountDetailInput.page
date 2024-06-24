@@ -1,4 +1,7 @@
-<!--Create a Visualforce page that displays an Account based off of user input.-->
+<!--
+Create a Visualforce page that displays an Account based off of user input.
+Add to your Visualforce page the functionality to display all related Contacts of the Account as an unformatted list of names.
+-->
 <apex:page standardController="Account" extensions="AccountDetailInputController">
     <apex:form>
         <apex:pageBlock title="Find Account">
@@ -11,7 +14,6 @@
 
         <apex:pageBlock title="Account Details" id="accountDetails" rendered="{!account != null}">
             <apex:pageBlockSection title="Account Information" columns="1">
-                <apex:outputText value="Account details section rerendered." />
                 <apex:outputField value="{!account.Name}" label="Name"/>
                 <apex:outputField value="{!account.Phone}" label="Phone"/>
                 <apex:outputField value="{!account.Industry}" label="Industry"/>
@@ -19,7 +21,13 @@
                 <apex:outputField value="{!account.AnnualRevenue}" label="Annual Revenue"/>
                 <apex:outputField value="{!account.Website}" label="Website"/>
             </apex:pageBlockSection>
+            <apex:pageBlockSection title="Related Contacts" columns="1">
+                <apex:outputPanel rendered="{!NOT(ISNULL(relatedContacts))}">
+                    <apex:repeat value="{!relatedContacts}" var="contact">
+                        <p>{!contact.Name}</p>
+                    </apex:repeat>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
 </apex:page>
-
