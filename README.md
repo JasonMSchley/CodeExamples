@@ -11,7 +11,7 @@
 # Coding Challenges: Intro Apex
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
-- [Calculator.cls](/classes/Calculator.cls)
+- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
 
 ## Challenge II
 
@@ -41,11 +41,11 @@ Test Cases
 
 
 # Coding Challenges: DML and SOQL
-# SOQL, SOSL and DML
-# These challenges should be done in a Trailhead Playground, not a Scratch Org! That way, you have records to work with.
+SOQL, SOSL and DML
+These challenges should be done in a Trailhead Playground, not a Scratch Org! That way, you have records to work with.
 
 ## SOQL
-## All these challenges can be completed in a single line using a cleverly structured SOQL query. Take the extra challenge to come up with the solution that uses the lowest number of lines of code!
+All these challenges can be completed in a single line using a cleverly structured SOQL query. Take the extra challenge to come up with the solution that uses the lowest number of lines of code!
 
 ### Challenge I
 Write a class called DataLord that has 1 method called NumAccounts. This method should return the number of Accounts that exist in org
