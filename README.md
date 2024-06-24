@@ -11,7 +11,7 @@
 # Coding Challenges: Intro Apex
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
-- [Calculator.cls](/classes/)
+- [Calculator.cls](/classes/Calculator.cls)
 
 ## Challenge II
 
