@@ -202,27 +202,27 @@ Take a screenshot of your scheduled job from within the setup menu and include i
 - [AccountSchedulableDeleteStale.cls](/force-app/main/default/classes/AccountSchedulableDeleteStale.cls)
 
 # Coding Challenges: Visualforce
-## Visualforce Challenges
-### Challenge I
+Visualforce Challenges
+## Challenge I
 Create a Visualforce page that displays a single Account, specified as a parameter in the URL.
 - [AccountDetail.page](/force-app/main/default/pages/AccountDetail.page)
 
-### Challenge II
+## Challenge II
 Modify your Visualforce page to display a paginated table of Accounts.
 - [AccountDetailPagination.page](/force-app/main/default/pages/AccountDetailPagination.page)
 - [AccountDetailPaginationController.cls](/force-app/main/default/classes/AccountDetailPaginationController.cls)
 
-### Challenge III
+## Challenge III
 Modify your Visualforce page to display a single Account, but this time the Account should always be the same, regardless of the parameter in the URL. You may not use a Standard Controller.
 - [AccountDetailSpecific.page](/force-app/main/default/pages/AccountDetailSpecific.page)
 - [AccountDetailSpecificController.cls](/force-app/main/default/classes/AccountDetailSpecificController.cls)
 
-### Challenge IV
+## Challenge IV
 Add to your Visualforce page an About Me section. This should simply be a paragraph about yourself. However, this paragraph should be translated to Spanish if the current viewing user has their language set to Spanish. Download this creation as a PDF.
 - [AccountDetailSpecific.page](/force-app/main/default/pages/AccountDetailSpecific.page)
 - [AccountDetailSpecificController.cls](/force-app/main/default/classes/AccountDetailSpecificController.cls)
 
-### Challenge V
+## Challenge V
 Style your wondrous Visualforce creation with CSS.
 - [AccountDetailSpecific.page](/force-app/main/default/pages/AccountDetailSpecific.page)
 - [AccountDetailSpecificController.cls](/force-app/main/default/classes/AccountDetailSpecificController.cls)
@@ -230,49 +230,51 @@ Style your wondrous Visualforce creation with CSS.
 - [styles.css](/force-app/main/default/pages//staticresources/CustomStyles/styles.css)
 
 
-### Challenge VI
+## Challenge VI
 Add functionality to your Visualforce page to add a greeting to the page. This greeting should include the Name of the Account specified as a parameter in the URL, and should only display once you click a button.
-- [AccountDetailSpecific.page]
-- [AccountDetailSpecificController.cls]
+- [AccountDetailSpecific.page](/force-app/main/default/pages/AccountDetailSpecific.page)
+- [AccountDetailSpecificController.cls](/force-app/main/default/classes/AccountDetailSpecificController.cls)
 
-### Challenge VII
+## Challenge VII
 Create a Visualforce page that displays an Account based off of user input.
+- [AccountDetailInput.page](/force-app/main/default/pages/AccountDetailInput.page)
+- [AccountDetailInputController.cls](/force-app/main/default/classes/AccountDetailInputController.cls)
 
-### Challenge VIII
+## Challenge VIII
 Add to your Visualforce page the functionality to display all related Contacts of the Account as an unformatted list of names.
 
-### Challenge IX
+## Challenge IX
 Create a Visualforce page that displays all Accounts in the system and all their related Contact Names in the same table. The Contact names should be separated by a comma and a space.
 
-### Challenge X
+## Challenge X
 Create a second Visualforce page that takes in some user input to filter Accounts by. Once this input is submitted, your page should display the previous Visualforce page you made and use the filter to filter the list of all Accounts.
 
-### Challenge XI
+## Challenge XI
 On your Visualforce page with all Accounts, implement a search feature. This feature should update the list of all Accounts with each character typed.
 
-### Challenge XII
+## Challenge XII
 Modify your table to support inline editing.
 
-### Challenge XIII
+## Challenge XIII
 In your Visualforce page created in Challenge VII, modify your page to only display the Account and Contact information when an Account has been input.
 
 Hint
 Use the .childComponents.add() method!
 
-### Challenge XIV
+## Challenge XIV
 Make use of the transient keyword and other optimizations to improve the performance of your 2 page Visualforce creation without changing any of the functionality.
 
-### Challenge XV
+## Challenge XV
 Write comprehensive tests for your 2 page Visualforce creation.
 
-### Elite Challenge I
+## Elite Challenge I
 Create a Visualforce page that shows a Wikipedia page of your choice. This should have a header that describes the page, a preview of the page, and a short description of what you like about the page/what you learned. You are not allowed to use any image components or tags to display the page preview and it should not be interactive.
 
-### Elite Challenge II
+## Elite Challenge II
 Create a Visualforce page that displays information about Contacts related to an Account passed as a parameter to the page. Display this Visualforce page on all Account record pages.
 
 
-## Aura Challenge
+# Aura Challenge
 Create two Aura components, one child and one parent, that showcases your ability to create component communication. 
 The child component should contain a text input box and a button. When the user clicks the button, the input text should be passed to the parent component. 
 The parent component receives messages from the child and prints them out in a list. 
