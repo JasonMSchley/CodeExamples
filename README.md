@@ -246,11 +246,14 @@ Add to your Visualforce page the functionality to display all related Contacts o
 
 ## Challenge IX
 Create a Visualforce page that displays all Accounts in the system and all their related Contact Names in the same table. The Contact names should be separated by a comma and a space.
-- [AccountContactPage.page](/force-app/main/default/pages/AccountContactPage.page)
-- [AccountContactPageController.cls](/force-app/main/default/classes/AccountContactPageController.cls)
+- [AccountContact.page](/force-app/main/default/pages/AccountContact.page)
+- [AccountContactController.cls](/force-app/main/default/classes/AccountContactController.cls)
 
 ## Challenge X
 Create a second Visualforce page that takes in some user input to filter Accounts by. Once this input is submitted, your page should display the previous Visualforce page you made and use the filter to filter the list of all Accounts.
+- [AccountContact.page](/force-app/main/default/pages/AccountContact.page)
+- [AccountContactController.cls](/force-app/main/default/classes/AccountContactController.cls)
+- [AccountFilter.page](/force-app/main/default/pages/AccountFilter.page)
 
 ## Challenge XI
 On your Visualforce page with all Accounts, implement a search feature. This feature should update the list of all Accounts with each character typed.

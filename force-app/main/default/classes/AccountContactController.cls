@@ -6,12 +6,34 @@ public with sharing class AccountContactController {
         accountWrappers = new List<AccountWrapper>();
     }
 
-    public PageReference loadAccountsAndContacts() {
+    public class AccountWrapper {
+        public Account account { get; private set; }
+        public String contactNames { get; private set; }
+
+        public AccountWrapper(Account account, String contactNames) {
+            this.account = account;
+            this.contactNames = contactNames;
+        }
+    }
+
+    public PageReference redirectToAccountContact() {
+        PageReference pageRef = Page.AccountContact;
+        pageRef.getParameters().put('filter', accountFilter);
+        return pageRef;
+    }
+
+    public void init() {
+        String filter = ApexPages.currentPage().getParameters().get('filter');
+        loadAccountsAndContacts(filter);
+    }
+    
+    
+    public void loadAccountsAndContacts(String filter) {
         accountWrappers.clear();
         String query = 'SELECT Id, Name, (SELECT Name FROM Contacts) FROM Account';
         
-        if (!String.isEmpty(accountFilter)) {
-            query += ' WHERE Name LIKE \'%' + String.escapeSingleQuotes(accountFilter) + '%\'';
+        if (!String.isEmpty(filter)) {
+            query += ' WHERE Name LIKE \'%' + String.escapeSingleQuotes(filter) + '%\'';
         }
         
         List<Account> accounts = Database.query(query);
@@ -26,16 +48,8 @@ public with sharing class AccountContactController {
             }
             accountWrappers.add(new AccountWrapper(acc, contactNames));
         }
-        return null;
-    }
+   }
 
-    public class AccountWrapper {
-        public Account account { get; private set; }
-        public String contactNames { get; private set; }
 
-        public AccountWrapper(Account account, String contactNames) {
-            this.account = account;
-            this.contactNames = contactNames;
-        }
-    }
 }
+ 

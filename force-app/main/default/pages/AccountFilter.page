@@ -1,13 +1,13 @@
 <!--
 Create a second Visualforce page that takes in some user input to filter Accounts by. Once this input is submitted, your page should display the previous Visualforce page you made and use the filter to filter the list of all Accounts.
 -->
-<apex:page controller="AccountFilterController">
+<apex:page controller="AccountContactController">
     <apex:form>
         <apex:pageBlock title="Filter Accounts">
             <apex:pageMessages id="messages"/>
             <apex:pageBlockSection title="Enter Account Filter" columns="1">
                 <apex:inputText value="{!accountFilter}" label="Account Filter" />
-                <apex:commandButton value="Apply Filter" action="{!loadAccountsAndContacts}" rerender="filteredAccounts, messages" />
+                <apex:commandButton value="Apply Filter" action="{!redirectToAccountContact}" />
             </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
