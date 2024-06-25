@@ -3,15 +3,31 @@ Create a Visualforce page that displays all Accounts in the system and all their
 -->
 <apex:page controller="AccountContactController" action="{!init}">
     <apex:form>
-        <apex:pageBlock title="Filtered Accounts and Related Contacts">
-            <apex:pageBlockTable value="{!accountWrappers}" var="wrapper">
-                <apex:column headerValue="Account Name">
-                    <apex:outputText value="{!wrapper.account.Name}"/>
-                </apex:column>
-                <apex:column headerValue="Contact Names">
-                    <apex:outputText value="{!wrapper.contactNames}"/>
-                </apex:column>
-            </apex:pageBlockTable>
+        <apex:pageBlock title="Filter Accounts">
+            <apex:pageMessages id="messages"/>
+            <apex:pageBlockSection title="Enter Account Filter" columns="1">
+                <apex:inputText value="{!accountFilter}" label="Account Filter">
+                    <apex:actionSupport event="onkeyup" action="{!updateAccountList}" rerender="accountTable"/>
+                </apex:inputText>
+            </apex:pageBlockSection>
         </apex:pageBlock>
+        
+        <apex:actionFunction name="updateAccountList" action="{!updateAccountList}" rerender="accountTable">
+            <apex:param name="filter" value="{!accountFilter}" assignTo="{!accountFilter}" />
+        </apex:actionFunction>
+        
+        <apex:outputPanel id="accountTable">
+            <apex:pageBlock title="Filtered Accounts and Related Contacts" rendered="{!NOT(ISNULL(accountWrappers))}">
+                <apex:pageBlockTable value="{!accountWrappers}" var="wrapper">
+                    <apex:column headerValue="Account Name">
+                        <apex:outputText value="{!wrapper.account.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Contact Names">
+                        <apex:outputText value="{!wrapper.contactNames}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:outputPanel>
     </apex:form>
 </apex:page>
+

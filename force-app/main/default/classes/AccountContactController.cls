@@ -5,7 +5,6 @@ public with sharing class AccountContactController {
     public AccountContactController() {
         accountWrappers = new List<AccountWrapper>();
     }
-
     public class AccountWrapper {
         public Account account { get; private set; }
         public String contactNames { get; private set; }
@@ -16,17 +15,20 @@ public with sharing class AccountContactController {
         }
     }
 
+    public void init() {
+        String filter = ApexPages.currentPage().getParameters().get('filter');
+        loadAccountsAndContacts(filter);
+    }
     public PageReference redirectToAccountContact() {
         PageReference pageRef = Page.AccountContact;
         pageRef.getParameters().put('filter', accountFilter);
         return pageRef;
     }
-
-    public void init() {
-        String filter = ApexPages.currentPage().getParameters().get('filter');
-        loadAccountsAndContacts(filter);
-    }
     
+    public PageReference updateAccountList() {
+        loadAccountsAndContacts(accountFilter);
+        return null; 
+    }
     
     public void loadAccountsAndContacts(String filter) {
         accountWrappers.clear();
@@ -37,6 +39,7 @@ public with sharing class AccountContactController {
         }
         
         List<Account> accounts = Database.query(query);
+
         for (Account acc : accounts) {
             String contactNames = '';
             if (acc.Contacts != null && !acc.Contacts.isEmpty()) {
@@ -48,8 +51,5 @@ public with sharing class AccountContactController {
             }
             accountWrappers.add(new AccountWrapper(acc, contactNames));
         }
-   }
-
-
+    }
 }
- 

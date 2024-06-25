@@ -257,6 +257,8 @@ Create a second Visualforce page that takes in some user input to filter Account
 
 ## Challenge XI
 On your Visualforce page with all Accounts, implement a search feature. This feature should update the list of all Accounts with each character typed.
+- [AccountContact.page](/force-app/main/default/pages/AccountContact.page)
+- [AccountContactController.cls](/force-app/main/default/classes/AccountContactController.cls)
 
 ## Challenge XII
 Modify your table to support inline editing.
