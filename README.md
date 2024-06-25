@@ -289,7 +289,12 @@ The parent component receives messages from the child and prints them out in a l
 We should have a button on the parent that calls a function in our child component - this function should clear the value of our input box.
 
 # LWC Challenge:
- 
+## Wire Service Only
 Create a LWC that can accept user input and dynamically display account records where the account name is similar to the value of the text input. Use the wire service only. 
- 
+- [AccountListWithWire](/force-app/main/default/lwc/accountListWithWire/)
+- [AccountListController.cls](/force-app/main/default/classes/AccountListController.cls)
+
+## Imperative Apex
 Next, recreate the same component but this time use imperative apex. 
+- [AccountListWitApex](/force-app/main/default/lwc/accountListWithApex/)
+- [AccountListController.cls](/force-app/main/default/classes/AccountListController.cls)

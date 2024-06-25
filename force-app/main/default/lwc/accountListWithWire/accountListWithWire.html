@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Search Accounts (With Wire)">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search Account Name" value={searchKey} onchange={handleSearchKeyChange}></lightning-input>
+        </div>
+
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+                <lightning-layout key={account.Id}>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <p>{account.Name}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <p>{account.Phone}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>
