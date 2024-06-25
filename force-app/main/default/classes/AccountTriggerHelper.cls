@@ -1,4 +1,4 @@
-public class AccountTriggerHelper {
+public with sharing class AccountTriggerHelper {
 
 
     //************************************************before delete triggers********************** */

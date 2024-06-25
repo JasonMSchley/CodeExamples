@@ -1,4 +1,4 @@
-global class AccountSchedulableDeleteStale implements Schedulable {
+global with sharing class AccountSchedulableDeleteStale implements Schedulable {
 
     global void execute(SchedulableContext sc) {
         // Schedule the batch class

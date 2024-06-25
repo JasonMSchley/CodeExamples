@@ -167,7 +167,6 @@ Override the Accelerate function to call the base implementation, and then set t
 - [Car.cls](/force-app/main/default/classes/Car.cls)
 
 ## Coding Challenges: Triggers
-## Triggers
 
 ### Challenge I
 Create a trigger to prevent the deletion of Accounts with Contacts.
@@ -247,6 +246,8 @@ Add to your Visualforce page the functionality to display all related Contacts o
 
 ## Challenge IX
 Create a Visualforce page that displays all Accounts in the system and all their related Contact Names in the same table. The Contact names should be separated by a comma and a space.
+- [AccountContactPage.page](/force-app/main/default/pages/AccountContactPage.page)
+- [AccountContactPageController.cls](/force-app/main/default/classes/AccountContactPageController.cls)
 
 ## Challenge X
 Create a second Visualforce page that takes in some user input to filter Accounts by. Once this input is submitted, your page should display the previous Visualforce page you made and use the filter to filter the list of all Accounts.
@@ -281,3 +282,9 @@ Create two Aura components, one child and one parent, that showcases your abilit
 The child component should contain a text input box and a button. When the user clicks the button, the input text should be passed to the parent component. 
 The parent component receives messages from the child and prints them out in a list. 
 We should have a button on the parent that calls a function in our child component - this function should clear the value of our input box.
+
+# LWC Challenge:
+ 
+Create a LWC that can accept user input and dynamically display account records where the account name is similar to the value of the text input. Use the wire service only. 
+ 
+Next, recreate the same component but this time use imperative apex. 

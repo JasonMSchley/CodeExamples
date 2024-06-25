@@ -1,4 +1,4 @@
-public class ContactTriggerHelper {
+public with sharing class ContactTriggerHelper {
 
     //************************************************BEFORE_INSERT Triggers********************** */
     //Trigger Challenge II

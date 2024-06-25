@@ -7,7 +7,7 @@ Schedule your schedulable apex to run at 12 am at the first of every month.
 Take a screenshot of your scheduled job from within the setup menu and include it in the repo 
 */
 
-global class AccountBatchDeleteStale implements Database.Batchable<sObject> {
+global with sharing class AccountBatchDeleteStale implements Database.Batchable<sObject> {
 
     global List<sObject> deleteRecords = new List<sObject>();
 

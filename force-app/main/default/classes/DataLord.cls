@@ -1,4 +1,4 @@
-public class DataLord {
+public with sharing class DataLord {
 
     //SOQL Challenges
     //Challenge I

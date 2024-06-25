@@ -1,4 +1,4 @@
-public class AccountDetailPaginationController {
+public with sharing class AccountDetailPaginationController {
     // Number of records to display per page
     public Integer pageSize { get; set; }
     // Current page number

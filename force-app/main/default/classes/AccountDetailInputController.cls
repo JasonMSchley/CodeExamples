@@ -1,4 +1,4 @@
-public class AccountDetailInputController {
+public with sharing class AccountDetailInputController {
     public String accountName { get; set; }
     public Account account { get; private set; }
     public List<Contact> relatedContacts { get; private set; }

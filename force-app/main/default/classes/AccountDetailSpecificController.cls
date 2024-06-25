@@ -1,4 +1,4 @@
-public class AccountDetailSpecificController{
+public with sharing class AccountDetailSpecificController{
     public Account account { get; private set; }
     public Boolean isPdf { get; private set; }
     public String aboutMe { get; private set; }

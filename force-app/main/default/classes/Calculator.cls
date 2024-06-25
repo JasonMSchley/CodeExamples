@@ -1,4 +1,4 @@
-public class Calculator {
+public with sharing class Calculator {
 
     //Challenge I
     // Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.

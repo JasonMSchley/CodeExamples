@@ -8,7 +8,7 @@ Implement Turn to rotate the SteeringRotation by the specified amount, in degree
 
 */
 
-public class Car extends Vehicle {
+public with sharing class Car extends Vehicle {
     
     //A variable called SteeringRotation. This should not be accessible outside of the class. It must be between -1440 and 1440, inclusive
     private Integer SteeringRotation { 
