@@ -1,3 +1,6 @@
-.THIS.parent {
-    border: purple solid 3px;
+.THIS .parent {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
 }

@@ -1,17 +1,19 @@
+<!-- ParentComponent.cmp -->
 <aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="messages" type="List" default="[]" />
     
-    <aura:handler name="compEvent" event="c:myComponentEvent" action="{!c.eventHandler}"/>
-    <aura:handler event="c:myApplicationEvent" action="{!c.eventHandler}"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:attribute name="eventMessage" type="string"/>
+    <!-- Handle the custom event -->
+    <aura:handler name="sendMessage" event="c:MessageEvent" action="{!c.handleMessage}" />
 
     <div class="parent">
-        <h1>This is my parent component: labeled in purple!</h1>
-        <c:childComponent valueFromParent="This is a message from the parent component!"/>
+        <h1>Parent component</h1>
+        <c:ChildComponent aura:id="child" />
+    <ul>
+        <aura:iteration items="{!v.messages}" var="msg">
+            <li>{!msg}</li>
+        </aura:iteration>
+    </ul>
 
-        <aura:if isTrue="{!v.eventMessage}">
-            <h1>Message from event:</h1>
-            <div>{! v.eventMessage }</div>    
-        </aura:if>    
+    <lightning:button label="Clear Child Input" onclick="{!c.clearChildInput}" />
     </div>
 </aura:component>

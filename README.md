@@ -287,6 +287,9 @@ Create two Aura components, one child and one parent, that showcases your abilit
 The child component should contain a text input box and a button. When the user clicks the button, the input text should be passed to the parent component. 
 The parent component receives messages from the child and prints them out in a list. 
 We should have a button on the parent that calls a function in our child component - this function should clear the value of our input box.
+- [ChildComponent](/force-app/main/default/aura/ChildComponent/)
+- [ParentComponent](/force-app/main/default/aura/ParentComponent/)
+- [MessageEvent](/force-app/main/default/aura/MessageEvent/)
 
 # LWC Challenge:
 ## Wire Service Only

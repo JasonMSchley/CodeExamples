@@ -23,13 +23,21 @@ global with sharing class AccountBatchDeleteStale implements Database.Batchable<
         for (sObject record : records) {
             deleteRecords.add(record);
         }
-    }
-
-    global void finish(Database.BatchableContext BC) {
+        
+         // perform DML statements in execute       
         try {
-            delete deleteRecords;
+           delete deleteRecords;
         } catch (DMLException e) {
             System.debug('Error deleting stale accounts: ' + e.getMessage());
         }
+    }
+
+    global void finish(Database.BatchableContext BC) {
+        // perform DML statements in execute
+        //try {
+        //    delete deleteRecords;
+        //} catch (DMLException e) {
+        //    System.debug('Error deleting stale accounts: ' + e.getMessage());
+        //}
     }
 }

@@ -1,8 +1,16 @@
+// ParentComponentController.js
 ({
-    eventHandler : function(component, event, helper) {
-        helper.logEvent(component, event);
+    handleMessage : function(component, event, helper) {
+        var message = event.getParam("message");
+        var messages = component.get("v.messages");
+        messages.push(message);
+        component.set("v.messages", messages);
     },
-    doInit : function(component, event, helper) {
-        helper.componentLoaded(component, event);
+    
+    clearChildInput : function(component, event, helper) {
+        var childComponent = component.find("child");
+        if (childComponent) {
+            childComponent.clearInput();
+        }
     }
 })
