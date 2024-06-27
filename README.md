@@ -301,3 +301,11 @@ Create a LWC that can accept user input and dynamically display account records 
 Next, recreate the same component but this time use imperative apex. 
 - [AccountListWitApex](/force-app/main/default/lwc/accountListWithApex/)
 - [AccountListController.cls](/force-app/main/default/classes/AccountListController.cls)
+
+# Deployment/UI Challenge 6/26
+Create a custom object called 'Class Delivery' 
+It should have the following fields:
+auto-number name field
+lookup to contact with a label of 'Assigned Trainer' 
+Make sure only 'Trainer' contacts may be selected - how you determine this is up to you
+Put all of the metadata into an unlocked package and then send me the install link for the package. 

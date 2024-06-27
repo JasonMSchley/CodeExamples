@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Assigned_Trainer</fullName>
+    <active>true</active>
+    <errorConditionFormula>Assigned_Trainer__r.Title != &quot;Trainer&quot;</errorConditionFormula>
+    <errorMessage>Assigned Trainer must have the title &apos;Trainer&apos;.</errorMessage>
+</ValidationRule>
