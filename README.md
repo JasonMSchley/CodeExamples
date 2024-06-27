@@ -309,3 +309,9 @@ auto-number name field
 lookup to contact with a label of 'Assigned Trainer' 
 Make sure only 'Trainer' contacts may be selected - how you determine this is up to you
 Put all of the metadata into an unlocked package and then send me the install link for the package. 
+
+- [Class_Delivery__c](/force-app/main/default/objects/Class_Delivery__c/)
+
+sf package create --name force-app --package-type Unlocked --path force-app
+sf package version create --path force-app --installation-key-bypass --code-coverage -w 10
+sf package version promote --package

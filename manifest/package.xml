@@ -4,7 +4,8 @@
         <members>Class_Delivery__c</members>
         <members>Class_Delivery__c.Name</members>
         <members>Class_Delivery__c.Assigned_Trainer__c</members>
-
+        <members>Class_Delivery__c.Validate_Assigned_Trainer</members>
+        <!-- Add any other fields you want to include -->
         <name>CustomObject</name>
     </types>
     <version>61.0</version>

@@ -3,35 +3,17 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "ClassDeliveryPackage",
-      "versionName": "ver 1.0",
-      "versionNumber": "1.0.0.NEXT",
-      "definitionFile": "config/project-scratch-def.json",
-      "packageXml": {
-        "types": [
-          {
-            "members": [
-              "Class_Delivery__c"
-            ],
-            "name": "CustomObject"
-          }
-        ],
-        "version": "61.0"
-      }
-    },
-    {
-      "path": "force-app",
-      "package": "ClassDeliveryPackage1",
+      "package": "force-app",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
-      "default": false,
       "versionDescription": ""
     }
   ],
+  "name": "lwcCodingChallenge",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "61.0",
   "packageAliases": {
-    "ClassDeliveryPackage1": "0Ho5f000000sYaHCAU"
+    "force-app": "0Ho5f000000sYaMCAU"
   }
 }
