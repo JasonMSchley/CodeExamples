@@ -4,7 +4,7 @@ public with sharing class AccountContactSearchController {
     public List<Account> accounts { get; set; }
     public Integer pageSize { get; set; }
     
-
+    //Setup functions
     public AccountContactSearchController() {
         pageSize = 10;  // Set the number of records per page
         searchKey = ''; // Initialize search key as empty
@@ -22,6 +22,7 @@ public with sharing class AccountContactSearchController {
         return pageRef;
     }
 
+    //Load accounts based upon searchKey
     public void loadAccounts() {
         String query = 'SELECT Id, Name, (SELECT Id, Name FROM Contacts ORDER BY Name) FROM Account ';
         if (!String.isEmpty(searchKey)) {
@@ -37,6 +38,7 @@ public with sharing class AccountContactSearchController {
         return (List<Account>) setCon.getRecords();
     }
 
+    //Pagination
     public void next() {
         setCon.next();
         accounts = (List<Account>) setCon.getRecords();
@@ -47,6 +49,7 @@ public with sharing class AccountContactSearchController {
         accounts = (List<Account>) setCon.getRecords();
     }
 
+    //Save function
     public void save() {
         try {
             update setCon.getRecords();

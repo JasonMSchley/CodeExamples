@@ -48,25 +48,25 @@ All these challenges can be completed in a single line using a cleverly structur
 
 ### Challenge I
 Write a class called DataLord that has 1 method called NumAccounts. This method should return the number of Accounts that exist in org
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.NumAccounts()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge II
 Write a method called NumHot. This method should return the number of Accounts with a Rating of Hot
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.NumHot()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge III
 Write a method called NumComplex. This method should return the number of Accounts that have an ampersand (&) in the Name
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.NumComplex()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge IV
 Write a method called BigFive. This method should return the top 5 Accounts in terms of Annual Revenue. You may only use 1 line of code for the method body
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.BigFive()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge V
 Write a method called LastBigOpportunity. This method should return the Opportunity with the most recent Close Date that had an Amount over $100,000.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.LastBigOpportunity()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge VI
 Write a method called MajorPlayers. This method should return all Contacts that are associated to an Account with a Rating of Hot.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.MajorPlayers()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge VII
 Write a method called MostPopularAccount. This method should return the Account Name that has the most associated Contacts.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.MostPopularAccount()](/force-app/main/default/classes/DataLord.cls)
 
 ### Elite Challenge I
 Universal Containers is interested in knowing the top 5 Lead Sources that are most likely to close and how likely those Sources are to close. They also wish to ignore the case where the Lead Source is blank. Write a single SOQL query to retrieve this information.
@@ -75,30 +75,30 @@ Universal Containers is interested in knowing the top 5 Lead Sources that are mo
 
 ### Challenge I
 Write a method to retrieve all Contacts and Leads that are named Tom.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.getToms()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge II
 Write a method to retrieve all Accounts that have an 'a' and an 'o' in one of their fields.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.getAOAccounts()](/force-app/main/default/classes/DataLord.cls)
 
 ### Elite Challenge I
 Robin knows that there is a phone number that ends in 1000, but has no idea which field it is in. They know it is either on an Account, Contact, or Lead and just need the Name. Write a method that solves Robin's issue.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.findRecordsWithPhoneNumber1000()](/force-app/main/default/classes/DataLord.cls)
 
 ## DML
 
 ### Challenge I
 Write a method called SpawnContacts that creates and inserts 200 uniquely named Contacts into the database.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.spawnContacts()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge II
 Write a method called CreateHomes that creates and inserts 3 uniquely named Accounts into the database.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.createHomes()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge III
 Write a method called Relocate that deletes the 50 most recent Contacts in the database.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.relocate()](/force-app/main/default/classes/DataLord.cls)
 ### Challenge IV
 Write a method called AssignHomes that relates the all Contacts created in these challenges to the 3 Accounts randomly.
 Note: This should only assign Contacts created during this challenge, and should ignore all Contacts created otherwise.
-- [DataLord.cls](/force-app/main/default/classes/DataLord.cls)
+- [DataLord.assignHomes()](/force-app/main/default/classes/DataLord.cls)
 
 ### Elite Challenge I
 Write a method called Play. This method should set a savepoint and rollback to the savepoint just before ending. It should then call all 4 methods in prior DML challenges then, before rolling back, print to the Debug Log some statistics about the state of the Database. Include: Number of Contacts and Accounts at the start, Number of Contacts and Accounts currently, and the number of Related Contacts for each Account.
@@ -280,6 +280,8 @@ Make use of the transient keyword and other optimizations to improve the perform
 
 ## Challenge XV
 Write comprehensive tests for your 2 page Visualforce creation.
+- [AccountContactSearchController.cls](/force-app/main/default/classes/AccountContactSearchtController.cls)
+- [AccountContactSearchControllerTests.cls](/force-app/main/default/classes/AccountContactSearchtControllerTests.cls)
 
 ## Elite Challenge I
 Create a Visualforce page that shows a Wikipedia page of your choice. This should have a header that describes the page, a preview of the page, and a short description of what you like about the page/what you learned. You are not allowed to use any image components or tags to display the page preview and it should not be interactive.
@@ -320,4 +322,5 @@ Put all of the metadata into an unlocked package and then send me the install li
 
 sf package create --name force-app --package-type Unlocked --path force-app
 sf package version create --path force-app --installation-key-bypass --code-coverage -w 10
+- (Class Delivery Package)(https://login.salesforce.com/packaging/installPackage.apexp?p0=04tbm0000001jntAAA)
 sf package version promote --package

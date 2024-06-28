@@ -37,25 +37,22 @@ public with sharing class DataLord {
     //Challenge VI
     //Write a method called MajorPlayers. This method should return all Contacts that are associated to an Account with a Rating of Hot.
     public static List<Contact> MajorPlayers() {
-        List<Account> hotAccounts = [SELECT Id FROM Account WHERE Rating = 'Hot'];
-        Set<Id> accountIds = new Set<Id>();
-        for (Account acc : hotAccounts) {
-            accountIds.add(acc.Id);
-        }
-        return [SELECT Id, FirstName, LastName, Email, AccountId FROM Contact WHERE AccountId IN :accountIds];
+        return [SELECT Id, FirstName, LastName, Email, AccountId 
+                FROM Contact 
+                WHERE AccountId IN (SELECT Id FROM Account WHERE Rating = 'Hot')];
     }
+    
 
     //Challenge VII
     //Write a method called MostPopularAccount. This method should return the Account Name that has the most associated Contacts.
     public static String MostPopularAccount() {
-        List<AggregateResult> results = [SELECT AccountId, COUNT(Id) contactCount FROM Contact GROUP BY AccountId ORDER BY COUNT(Id) DESC LIMIT 1];
-        if (results.isEmpty()){
-            return null;
-        }
-
-        Id mostPopularAccountId = (Id)results[0].get('AccountId');
-        Account mostPopularAccount = [SELECT Name FROM Account WHERE Id = :mostPopularAccountId];
-        return mostPopularAccount.Name;
+        return (String)[
+            SELECT Account.Name 
+            FROM Contact 
+            GROUP BY Account.Name 
+            ORDER BY COUNT(Id) 
+            DESC LIMIT 1]
+            [0].get('Name');
     }
 
 
@@ -63,50 +60,24 @@ public with sharing class DataLord {
     //Challenge I
     //Write a method to retrieve all Contacts and Leads that are named Tom.
     public static List<SObject> getToms() {
-        List<SObject> toms = new List<SObject>();
-    
-        // Search for Contacts and Leads named "Tom" using SOSL
-        List<List<SObject>> searchResults = [FIND 'Tom' IN NAME FIELDS RETURNING Contact(FirstName, LastName), Lead(FirstName, LastName)];
-        
-        for (List<SObject> result : searchResults) {
-            toms.addAll(result);
-        }
-        
-        return toms;
+        return [FIND 'Tom' IN NAME FIELDS RETURNING Contact(FirstName, LastName), Lead(FirstName, LastName)][0];
     }
+    
 
     //Challenge II
     //Write a method to retrieve all Accounts that have an 'a' and an 'o' in one of their fields.
     public static List<Account> getAOAccounts() {
-        List<Account> accounts = new List<Account>();
-        
-        // Search for Accounts with 'a' and 'o' in one of their fields using SOSL
-        List<List<Account>> searchResults = [FIND '(a AND o)' IN ALL FIELDS RETURNING Account];
-        
-        // Flatten the search results
-        for (List<Account> result : searchResults) {
-            accounts.addAll(result);
-        }
-        
-        return accounts;
+        return [FIND '(a AND o)' IN ALL FIELDS RETURNING Account];
     }
+    
 
     //Elite Challenge I
     //Robin knows that there is a phone number that ends in 1000, but has no idea which field it is in. 
     //They know it is either on an Account, Contact, or Lead and just need the Name. Write a method that solves Robin's issue.
     public static List<SObject> findRecordsWithPhoneNumber1000() {
-        List<SObject> records = new List<SObject>();
-        
-        // Search for records with a phone number ending in 1000 using SOSL
-        List<List<SObject>> searchResults = [FIND '*1000' IN PHONE FIELDS RETURNING Account(Name), Contact(Name), Lead(Name)];
-        
-        // Flatten the search results
-        for (List<SObject> result : searchResults) {
-            records.addAll(result);
-        }
-        
-        return records;
+        return [FIND '*1000' IN PHONE FIELDS RETURNING Account(Name), Contact(Name), Lead(Name)][0];
     }
+    
 
     //DML
     //Challenge I
@@ -155,11 +126,7 @@ public with sharing class DataLord {
         // Assign each Contact to one of the Accounts randomly
         for (Contact contact : allContacts) {
             // Get a random index to select one of the Accounts
-            Integer randomIndex = Math.mod(Math.abs(Crypto.getRandomInteger()), allAccounts.size());
-            Account selectedAccount = allAccounts[randomIndex];
-            
-            // Relate the Contact to the selected Account
-            contact.AccountId = selectedAccount.Id;
+            contact.AccountId = allAccounts[Math.mod(Math.abs(Crypto.getRandomInteger()), allAccounts.size())].Id;
         }
         
         // Update the Contacts to save the changes
