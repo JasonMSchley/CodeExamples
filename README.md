@@ -267,12 +267,16 @@ Modify your table to support inline editing.
 
 ## Challenge XIII
 In your Visualforce page created in Challenge VII, modify your page to only display the Account and Contact information when an Account has been input.
-
 Hint
 Use the .childComponents.add() method!
+- [AccountContactSearch.page](/force-app/main/default/pages/AccountContactSearch.page)
+- [AccountContactSearchController.cls](/force-app/main/default/classes/AccountContactSearchtController.cls)
 
 ## Challenge XIV
 Make use of the transient keyword and other optimizations to improve the performance of your 2 page Visualforce creation without changing any of the functionality.
+- [AccountContactSearch.page](/force-app/main/default/pages/AccountContactSearch.page)
+- [AccountContactSearchController.cls](/force-app/main/default/classes/AccountContactSearchtController.cls)
+- [AccountContactSearchFilter.page](/force-app/main/default/pages/AccountContactSearchFilter.page)
 
 ## Challenge XV
 Write comprehensive tests for your 2 page Visualforce creation.

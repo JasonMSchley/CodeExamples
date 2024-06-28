@@ -16,6 +16,12 @@ public with sharing class AccountContactSearchController {
         loadAccounts();
     }
 
+    public PageReference redirectToAccountContactSearch() {
+        PageReference pageRef = Page.AccountContactSearch;
+        pageRef.getParameters().put('filter', searchKey);
+        return pageRef;
+    }
+
     public void loadAccounts() {
         String query = 'SELECT Id, Name, (SELECT Id, Name FROM Contacts ORDER BY Name) FROM Account ';
         if (!String.isEmpty(searchKey)) {

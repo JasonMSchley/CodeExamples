@@ -19,6 +19,7 @@ public with sharing class AccountContactController {
         String filter = ApexPages.currentPage().getParameters().get('filter');
         loadAccountsAndContacts(filter);
     }
+    
     public PageReference redirectToAccountContact() {
         PageReference pageRef = Page.AccountContact;
         pageRef.getParameters().put('filter', accountFilter);
