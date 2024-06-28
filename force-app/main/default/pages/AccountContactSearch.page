@@ -1,0 +1,44 @@
+<apex:page controller="AccountContactSearchController" action="{!init}">
+    <apex:form>
+        <apex:pageBlock title="Accounts and Contacts">
+            <apex:pageMessages />
+
+            <!-- Search Box -->
+            <apex:inputText value="{!searchKey}" id="searchInput">
+                <apex:actionSupport event="onkeyup" action="{!loadAccounts}" reRender="accountTable, pagination" />
+            </apex:inputText>
+            
+            <!-- Table displaying Accounts and Contacts -->
+            <apex:pageBlockTable value="{!accounts}" var="acc" id="accountTable">
+                <apex:column headerValue="Account Name">
+                    <apex:outputField value="{!acc.Name}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" event="ondblclick"/>
+                    </apex:outputField>
+                </apex:column>
+                <apex:column headerValue="Contact Names">
+                    <apex:repeat value="{!acc.Contacts}" var="con">
+                        <apex:outputField value="{!con.Name}" />
+                        <apex:outputText value=", " rendered="{!NOT(ISNULL(con) && con != acc.Contacts[acc.Contacts.size-1])}" />
+                    </apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>
+
+            <!-- Pagination Controls -->
+            <apex:panelGrid columns="2">
+                <apex:commandButton action="{!previous}" value="Previous" reRender="accountTable, pagination" />
+                <apex:commandButton action="{!next}" value="Next" reRender="accountTable, pagination" />
+            </apex:panelGrid>
+            
+        </apex:pageBlock>
+
+        <!-- Pagination Information -->
+        <apex:outputPanel id="pagination">
+            <apex:outputText value="Page {!setCon.pageNumber} of {!CEILING(setCon.resultSize / setCon.pageSize)}" />
+        </apex:outputPanel>
+
+        <!-- Save and Cancel Buttons for Inline Editing -->
+        <apex:commandButton id="saveButton" action="{!save}" value="Save" reRender="messages" styleClass="btn btn-primary" />
+        <apex:commandButton id="cancelButton" value="Cancel" reRender="accountTable" immediate="true" styleClass="btn btn-secondary" />
+        
+    </apex:form>
+</apex:page>

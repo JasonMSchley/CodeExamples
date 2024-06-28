@@ -3,6 +3,7 @@ Create a Visualforce page that displays all Accounts in the system and all their
 -->
 <apex:page controller="AccountContactController" action="{!init}">
     <apex:form>
+
         <apex:pageBlock title="Filter Accounts">
             <apex:pageMessages id="messages"/>
             <apex:pageBlockSection title="Enter Account Filter" columns="1">
@@ -28,6 +29,7 @@ Create a Visualforce page that displays all Accounts in the system and all their
                 </apex:pageBlockTable>
             </apex:pageBlock>
         </apex:outputPanel>
+        
     </apex:form>
 </apex:page>
 

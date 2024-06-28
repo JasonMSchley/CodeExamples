@@ -5,6 +5,7 @@ Modify your Visualforce page to display a paginated table of Accounts.-->
 <apex:page controller="AccountDetailPaginationController">
     <apex:form>
         <apex:pageBlock title="Accounts List">
+            
             <apex:pageBlockTable value="{!accounts}" var="account">
                 <apex:column headerValue="Name">
                     <apex:outputLink value="/{!account.Id}">{!account.Name}</apex:outputLink>
@@ -23,6 +24,7 @@ Modify your Visualforce page to display a paginated table of Accounts.-->
                 <apex:commandButton action="{!nextPage}" value="Next" 
                                     rerender="accountsTable" disabled="{!pageNumber == totalPages}"/>
             </apex:panelGroup>
+
         </apex:pageBlock>
     </apex:form>
 </apex:page>

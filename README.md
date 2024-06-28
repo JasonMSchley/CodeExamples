@@ -262,6 +262,8 @@ On your Visualforce page with all Accounts, implement a search feature. This fea
 
 ## Challenge XII
 Modify your table to support inline editing.
+- [AccountContactSearch.page](/force-app/main/default/pages/AccountContactSearch.page)
+- [AccountContactSearchController.cls](/force-app/main/default/classes/AccountContactSearchController.cls)
 
 ## Challenge XIII
 In your Visualforce page created in Challenge VII, modify your page to only display the Account and Contact information when an Account has been input.
