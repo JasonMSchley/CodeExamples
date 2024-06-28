@@ -323,4 +323,5 @@ Put all of the metadata into an unlocked package and then send me the install li
 sf package create --name force-app --package-type Unlocked --path force-app
 sf package version create --path force-app --installation-key-bypass --code-coverage -w 10
 - [Class Delivery Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tbm0000001jntAAA)
+
 sf package version promote --package
