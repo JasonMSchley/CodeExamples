@@ -1,0 +1,92 @@
+<apex:page controller="CalculatorController">
+    <apex:pageMessages />
+    <apex:form>
+        <apex:pageBlock title="Calculator Operations">
+            <apex:outputPanel layout="block" style="text-align: center;">
+            <!-- Addition Section -->
+            <apex:pageBlockSection title="Addition" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!addInputA}" />
+                    <apex:inputText value="{!addInputB}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performAddition}" value="Add" reRender="addResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="addResult" layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!addResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- Subtraction Section -->
+            <apex:pageBlockSection title="Subtraction" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!subInputA}" />
+                    <apex:inputText value="{!subInputB}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performSubtraction}" value="Subtract" reRender="subResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="subResult" layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!subResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- Multiplication Section -->
+            <apex:pageBlockSection title="Multiplication" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!mulInputA}" />
+                    <apex:inputText value="{!mulInputB}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performMultiplication}" value="Multiply" reRender="mulResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="mulResult"  layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!mulResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- Division Section -->
+            <apex:pageBlockSection title="Division" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!divInputA}" />
+                    <apex:inputText value="{!divInputB}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performDivision}" value="Divide" reRender="divResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="divResult"  layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!divResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- Modulus Section -->
+            <apex:pageBlockSection title="Modulus" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!modInputA}" />
+                    <apex:inputText value="{!modInputB}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performModulus}" value="Mod" reRender="modResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="modResult"  layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!modResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <!-- Calculate Expression Section -->
+            <apex:pageBlockSection title="Calculate Expression" columns="1">
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:inputText value="{!calcExpression}" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" style="text-align: center;">
+                    <apex:commandButton action="{!performCalculation}" value="Calculate" reRender="calcResult" />
+                </apex:outputPanel>
+                <apex:outputPanel id="calcResult"  layout="block" style="text-align: center;">
+                    <apex:outputText value="Result: {!calcResult}" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

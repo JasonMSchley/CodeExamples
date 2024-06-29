@@ -11,23 +11,23 @@
 # Coding Challenges: Intro Apex
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
-- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
+- [CalculatorHelper.Add()](/force-app/main/default/classes/CalculatorHelper.cls)
 
 ## Challenge II
 Create a method called Multiply that takes 2 Integer parameters and returns their product. You are not allowed to use the * operator to multiply the two Integers, and you must use your Add method you created in Challenge I.
-- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
+- [CalculatorHelper.Multiply()](/force-app/main/default/classes/CalculatorHelper.cls)
 
 ## Challenge III
 Create a method called Divide that takes 2 Integer parameters and returns their quotient (Parameter 1 / Parameter 2). Once again, you are not allowed to use the / operator, and you must use your Add method. For this challenge, do not consider if zero is the divisor.
-- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
+- [CalculatorHelper.Divide()](/force-app/main/default/classes/CalculatorHelper.cls)
 
 ## Challenge IV
 Modify your Divide method so that it will return 0 if zero is the divisor.
-- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
+- [CalculatorHelper.Divide()](/force-app/main/default/classes/CalculatorHelper.cls)
 
 ## Challenge V
 Create a method called Mod that takes 2 Integer parameters and returns their remainder. You are not allowed to use the Math.Mod() method.
-- [Calculator.cls](/force-app/main/default/classes/Calculator.cls)
+- [CalculatorHelper.Mod()](/force-app/main/default/classes/CalculatorHelper.cls)
 
 ## Elite Challenge I
 Create a method called Calculate that takes in a String in proper mathematical format (eg. 1 + 1) and returns the result.
@@ -37,6 +37,10 @@ Test Cases
 (1 + 2) * 3 = 9
 ((3 * (4 + 2) - 8) + 10) / 2 = 10
 (10.5 * 2 - 10) * 0.5 = 5.5
+- [CalculatorHelper.Calculate()](/force-app/main/default/classes/CalculatorHelper.cls)
+- [CalculatorController.cls](/force-app/main/default/classes/CalculatorController.cls)
+- [CalculatorPage.Page](/force-app/main/default/pages/Calculator.page)
+- [CalculatorControllerTests.cls](/force-app/main/default/classes/CalculatorControllerTests.cls)
 
 
 # Coding Challenges: DML and SOQL
