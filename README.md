@@ -10,7 +10,7 @@ Despite searching online for solutions and submitting a help ticket, I was infor
 - [Salesforce Trailhead](https://www.salesforce.com/trailblazer/jasonmschley)
 - [Linkedin](https://www.linkedin.com/in/jason-schley/)
 
-<div>
+
 # Coding Challenges: Intro Apex
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
