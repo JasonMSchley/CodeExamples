@@ -10,7 +10,7 @@ Despite searching online for solutions and submitting a help ticket, I was infor
 - [Salesforce Trailhead](https://www.salesforce.com/trailblazer/jasonmschley)
 - [Linkedin](https://www.linkedin.com/in/jason-schley/)
 
-<div />
+<div>
 # Coding Challenges: Intro Apex
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
@@ -34,12 +34,12 @@ Create a method called Mod that takes 2 Integer parameters and returns their rem
 
 ## Elite Challenge I
 Create a method called Calculate that takes in a String in proper mathematical format (eg. 1 + 1) and returns the result.
-Test Cases
+Test Cases<br>
 1 + 2 * 3 = 7<br>
-2 * 2 + 3 = 7
-(1 + 2) * 3 = 9
-((3 * (4 + 2) - 8) + 10) / 2 = 10
-(10.5 * 2 - 10) * 0.5 = 5.5
+2 * 2 + 3 = 7<br>
+(1 + 2) * 3 = 9<br>
+((3 * (4 + 2) - 8) + 10) / 2 = 10<br>
+(10.5 * 2 - 10) * 0.5 = 5.5<br>
 - [CalculatorHelper.Calculate()](/force-app/main/default/classes/CalculatorHelper.cls)
 - [CalculatorController.cls](/force-app/main/default/classes/CalculatorController.cls)
 - [CalculatorPage.Page](/force-app/main/default/pages/Calculator.page)
