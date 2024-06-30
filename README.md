@@ -1,3 +1,5 @@
+- [Salesforce Trailhead](https://www.salesforce.com/trailblazer/jasonmschley)
+- [Linkedin](https://www.linkedin.com/in/jason-schley/)
 
 # Read All About Me
 "Hello! My name is Jason Schley, and i am a Salesforce developer. I have both Admin and PD1 certificate.  I have honed my skills in Sales Cloud and Service Cloud when i was workering at a toy gun company as i was managing a database where i had to do alot of manual logic processes that now i know could have easily be accomplished with Salesforce. I enjoy tackling challenges and finding innovative solutions, whether it's through programatic or declarative solutions. In my free time, I play video games such as "Oxygen Not Included" or "Factorio, which are type of games where you dont directly control the characters, instead you set up systems with roles and profiles to have the characters setup chains of processes that remind me of Flows. I am always eager to learn and grow, and I look forward to contributing my skills and enthusiasm to new opportunities."
@@ -7,8 +9,7 @@
 "Besides my speech issue, where I occasionally lose control over my tongue, my greatest weakness is my ability to find bugs in a system. While this might sound like a strength, it often leads to unintended complications. For instance, when using Focus on Force to study for my PD1 certification, I encountered an issue where the page stalled and got stuck after clicking the 'submit exam' button, effectively breaking the exam system.
 Despite searching online for solutions and submitting a help ticket, I was informed that the issue could not be replicated, and the ticket was closed. After several days of studying with a broken exam system, I managed to identify a workaround and replicate the error, but this took valuable time away from my proper study schedule."
 
-- [Salesforce Trailhead](https://www.salesforce.com/trailblazer/jasonmschley)
-- [Linkedin](https://www.linkedin.com/in/jason-schley/)
+
 
 
 # Coding Challenges: Intro Apex

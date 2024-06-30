@@ -1,0 +1,155 @@
+<apex:page controller="DataLordController">
+    <apex:pageMessages />
+    <apex:sectionHeader title="DataLord Results" />
+    
+    <!-- NumAccounts -->
+    <apex:pageBlock title="Number of Accounts">
+        <apex:outputText value="Total Accounts: {!numAccounts}" />
+    </apex:pageBlock>
+    
+    <!-- NumHot -->
+    <apex:pageBlock title="Number of Hot Accounts">
+        <apex:outputText value="Hot Accounts: {!numHot}" />
+    </apex:pageBlock>
+    
+    <!-- NumComplex -->
+    <apex:pageBlock title="Number of Complex Accounts (with '&' in Name)">
+        <apex:outputText value="Complex Accounts: {!numComplex}" />
+    </apex:pageBlock>
+    
+    <!-- BigFive -->
+    <apex:pageBlock title="Top 5 Accounts by Annual Revenue">
+        <apex:pageBlockTable value="{!topFiveAccounts}" var="acc">
+            <apex:column headerValue="Account Name">
+                <apex:outputText value="{!acc.Name}" />
+            </apex:column>
+            <apex:column headerValue="Annual Revenue">
+                <apex:outputText value="{!acc.AnnualRevenue}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <!-- LastBigOpportunity -->
+    <apex:pageBlock title="Last Big Opportunity">
+        <apex:outputPanel rendered="{!lastBigOpportunity != null}">
+            <apex:outputText value="Opportunity Name: {!lastBigOpportunity.Name}" /><br/>
+            <apex:outputText value="Close Date: {!lastBigOpportunity.CloseDate}" /><br/>
+            <apex:outputText value="Amount: {!lastBigOpportunity.Amount}" />
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!lastBigOpportunity == null}">
+            <apex:outputText value="No big opportunities found." />
+        </apex:outputPanel>
+    </apex:pageBlock>
+    
+    <!-- MajorPlayers -->
+    <apex:pageBlock title="Major Players (Contacts from Hot Accounts)">
+        <apex:pageBlockTable value="{!majorPlayers}" var="con">
+            <apex:column headerValue="First Name">
+                <apex:outputText value="{!con.FirstName}" />
+            </apex:column>
+            <apex:column headerValue="Last Name">
+                <apex:outputText value="{!con.LastName}" />
+            </apex:column>
+            <apex:column headerValue="Email">
+                <apex:outputText value="{!con.Email}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <!-- MostPopularAccount -->
+    <apex:pageBlock title="Most Popular Account">
+        <apex:outputText value="Most Popular Account: {!mostPopularAccount}" />
+    </apex:pageBlock>
+    
+    <!-- TopLeadSources -->
+    <apex:pageBlock title="Top 5 Lead Sources Likely to Close">
+        <apex:pageBlockTable value="{!leadSourceResults}" var="result">
+            <apex:column headerValue="Lead Source">
+                <apex:outputText value="{!result.leadSource}" />
+            </apex:column>
+            <apex:column headerValue="Closed Count">
+                <apex:outputText value="{!result.closedCount}" />
+            </apex:column>
+            <apex:column headerValue="Close Probability (%)">
+                <apex:outputText value="{!result.closeProbability}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <!-- SOSL Challenges -->
+    <!-- getToms -->    
+    <apex:pageBlock title="Contacts and Leads named 'Tom'">
+        <apex:pageBlockTable value="{!tomRecords}" var="record">
+            <apex:column headerValue="Record Type">
+                <apex:outputText value="{!record.recordType}" />
+            </apex:column>
+            <apex:column headerValue="First Name">
+                <apex:outputText value="{!record.firstName}" />
+            </apex:column>
+            <apex:column headerValue="Last Name">
+                <apex:outputText value="{!record.lastName}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <!-- getAOAccounts -->
+    <apex:pageBlock title="Accounts with 'a' and 'o' in fields">
+        <apex:pageBlockTable value="{!aoAccounts}" var="acc">
+            <apex:column headerValue="Account Name">
+                <apex:outputText value="{!acc.Name}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <!-- findRecordsWithPhoneNumber1000 -->
+    <apex:pageBlock title="Records with Phone Number ending in '1000'">
+        <apex:pageBlockTable value="{!recordsWithPhoneNumber1000}" var="rec">
+            <apex:column headerValue="Record Type">
+                <apex:outputText value="{!rec.recordType}" />
+            </apex:column>
+            <apex:column headerValue="Name">
+                <apex:outputText value="{!rec.name}" />
+            </apex:column>
+            <apex:column headerValue="Phone">
+                <apex:outputText value="{!rec.phoneNumber}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+
+    <!-- DML Challenges -->
+    <apex:form>
+        <!-- spawnContacts -->
+        <apex:pageBlock title="Spawn 200 Contacts">
+            <apex:commandButton value="Spawn Contacts" action="{!spawnContacts}" rerender="spawnContactsBlock"/>
+            <apex:outputPanel id="spawnContactsBlock">
+                <apex:outputText value="Contacts Spawned." rendered="{!contactsSpawned}" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <!-- createHomes -->
+        <apex:pageBlock title="Create 3 Homes">
+            <apex:commandButton value="Create Homes" action="{!createHomes}" rerender="createHomesBlock"/>
+            <apex:outputPanel id="createHomesBlock">
+                <apex:outputText value="Homes Created." rendered="{!homesCreated}" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <!-- relocate -->
+        <apex:pageBlock title="Relocate 50 Most Recent Contacts">
+            <apex:commandButton value="Relocate Contacts" action="{!relocate}" rerender="relocateBlock"/>
+            <apex:outputPanel id="relocateBlock">
+                <apex:outputText value="Contacts Relocated." rendered="{!contactsRelocated}" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <!-- assignHomes -->
+        <apex:pageBlock title="Assign Homes to Contacts">
+            <apex:commandButton value="Assign Homes" action="{!assignHomes}" rerender="assignHomesBlock"/>
+            <apex:outputPanel id="assignHomesBlock">
+                <apex:outputText value="Homes Assigned." rendered="{!homesAssigned}" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>
