@@ -1,6 +1,6 @@
 public with sharing class DataLordHelper {
 
-    //SOQL Challenges
+    //SOQL Challenges//////////////////////////////////////////////////////////////////////////////////////
     //Challenge I
     //Write a class called DataLord that has 1 method called NumAccounts. 
     //This method should return the number of Accounts that exist in org
@@ -102,7 +102,7 @@ public with sharing class DataLordHelper {
         return leadSourceResults;
     }
 
-    //SOSL Challenges
+    //SOSL Challenges////////////////////////////////////////////////////////////////////////////////
     //Challenge I
     //Write a method to retrieve all Contacts and Leads that are named Tom.
     public class TomRecord {
@@ -144,7 +144,8 @@ public with sharing class DataLordHelper {
     //Challenge II
     //Write a method to retrieve all Accounts that have an 'a' and an 'o' in one of their fields.
     public static List<Account> getAOAccounts() {
-        return [SELECT Id, Name FROM Account WHERE Name LIKE '%a%' AND Name LIKE '%o%'];
+        return [FIND '"*a*" Or "*o*"' IN ALL FIELDS RETURNING Account(Id,Name)][0];  //SOSL
+        //return [SELECT Id, Name FROM Account WHERE Name LIKE '%a%' AND Name LIKE '%o%'];  //SOQL
     }
     
 
@@ -198,7 +199,7 @@ public with sharing class DataLordHelper {
     }
     
 
-    //DML
+    //DML//////////////////////////////////////////////////////////////////////////////////////
     //Challenge I
     //Write a method called SpawnContacts that creates and inserts 200 uniquely named Contacts into the database.
     public static void spawnContacts() {

@@ -9,10 +9,12 @@
 "Besides my speech issue, where I occasionally lose control over my tongue, my greatest weakness is my ability to find bugs in a system. While this might sound like a strength, it often leads to unintended complications. For instance, when using Focus on Force to study for my PD1 certification, I encountered an issue where the page stalled and got stuck after clicking the 'submit exam' button, effectively breaking the exam system.
 Despite searching online for solutions and submitting a help ticket, I was informed that the issue could not be replicated, and the ticket was closed. After several days of studying with a broken exam system, I managed to identify a workaround and replicate the error, but this took valuable time away from my proper study schedule."
 
-
-
-
 # Coding Challenges: Intro Apex
+- [CalculatorHelper.cls](/force-app/main/default/classes/CalculatorHelper.cls)
+- [CalculatorController.cls](/force-app/main/default/classes/CalculatorController.cls)
+- [CalculatorPage.Page](/force-app/main/default/pages/Calculator.page)
+- [CalculatorControllerTests.cls](/force-app/main/default/classes/CalculatorControllerTests.cls)
+
 ## Challenge I
 Create a class called Calculator with a single method called Add. This method should take 2 Integer parameters and return their sum.
 - [CalculatorHelper.Add()](/force-app/main/default/classes/CalculatorHelper.cls)
@@ -42,39 +44,40 @@ Test Cases<br>
 ((3 * (4 + 2) - 8) + 10) / 2 = 10<br>
 (10.5 * 2 - 10) * 0.5 = 5.5<br>
 - [CalculatorHelper.Calculate()](/force-app/main/default/classes/CalculatorHelper.cls)
-- [CalculatorController.cls](/force-app/main/default/classes/CalculatorController.cls)
-- [CalculatorPage.Page](/force-app/main/default/pages/Calculator.page)
-- [CalculatorControllerTests.cls](/force-app/main/default/classes/CalculatorControllerTests.cls)
+
 
 
 # Coding Challenges: DML and SOQL
 SOQL, SOSL and DML
 These challenges should be done in a Trailhead Playground, not a Scratch Org! That way, you have records to work with.
+- [DataLordHelper.cls](/force-app/main/default/classes/DataLordHelper.cls)
+- [DataLordController.cls](/force-app/main/default/classes/DataLordController.cls)
+- [DataLord/page](/force-app/main/default/classes/DataLord.page)
 
 ## SOQL
 All these challenges can be completed in a single line using a cleverly structured SOQL query. Take the extra challenge to come up with the solution that uses the lowest number of lines of code!
 
 ### Challenge I
 Write a class called DataLord that has 1 method called NumAccounts. This method should return the number of Accounts that exist in org
-- [DataLord.NumAccounts()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.NumAccounts()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge II
 Write a method called NumHot. This method should return the number of Accounts with a Rating of Hot
-- [DataLord.NumHot()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.NumHot()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge III
 Write a method called NumComplex. This method should return the number of Accounts that have an ampersand (&) in the Name
-- [DataLord.NumComplex()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.NumComplex()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge IV
 Write a method called BigFive. This method should return the top 5 Accounts in terms of Annual Revenue. You may only use 1 line of code for the method body
-- [DataLord.BigFive()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.BigFive()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge V
 Write a method called LastBigOpportunity. This method should return the Opportunity with the most recent Close Date that had an Amount over $100,000.
-- [DataLord.LastBigOpportunity()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.LastBigOpportunity()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge VI
 Write a method called MajorPlayers. This method should return all Contacts that are associated to an Account with a Rating of Hot.
-- [DataLord.MajorPlayers()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.MajorPlayers()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge VII
 Write a method called MostPopularAccount. This method should return the Account Name that has the most associated Contacts.
-- [DataLord.MostPopularAccount()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.MostPopularAccount()](/force-app/main/default/classes/DataLordHelper.cls)
 
 ### Elite Challenge I
 Universal Containers is interested in knowing the top 5 Lead Sources that are most likely to close and how likely those Sources are to close. They also wish to ignore the case where the Lead Source is blank. Write a single SOQL query to retrieve this information.
@@ -83,30 +86,30 @@ Universal Containers is interested in knowing the top 5 Lead Sources that are mo
 
 ### Challenge I
 Write a method to retrieve all Contacts and Leads that are named Tom.
-- [DataLord.getToms()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.getToms()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge II
 Write a method to retrieve all Accounts that have an 'a' and an 'o' in one of their fields.
-- [DataLord.getAOAccounts()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.getAOAccounts()](/force-app/main/default/classes/DataLordHelper.cls)
 
 ### Elite Challenge I
 Robin knows that there is a phone number that ends in 1000, but has no idea which field it is in. They know it is either on an Account, Contact, or Lead and just need the Name. Write a method that solves Robin's issue.
-- [DataLord.findRecordsWithPhoneNumber1000()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.findRecordsWithPhoneNumber1000()](/force-app/main/default/classes/DataLordHelper.cls)
 
 ## DML
 
 ### Challenge I
 Write a method called SpawnContacts that creates and inserts 200 uniquely named Contacts into the database.
-- [DataLord.spawnContacts()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.spawnContacts()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge II
 Write a method called CreateHomes that creates and inserts 3 uniquely named Accounts into the database.
-- [DataLord.createHomes()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.createHomes()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge III
 Write a method called Relocate that deletes the 50 most recent Contacts in the database.
-- [DataLord.relocate()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.relocate()](/force-app/main/default/classes/DataLordHelper.cls)
 ### Challenge IV
 Write a method called AssignHomes that relates the all Contacts created in these challenges to the 3 Accounts randomly.
 Note: This should only assign Contacts created during this challenge, and should ignore all Contacts created otherwise.
-- [DataLord.assignHomes()](/force-app/main/default/classes/DataLord.cls)
+- [DataLordHelper.assignHomes()](/force-app/main/default/classes/DataLordHelper.cls)
 
 ### Elite Challenge I
 Write a method called Play. This method should set a savepoint and rollback to the savepoint just before ending. It should then call all 4 methods in prior DML challenges then, before rolling back, print to the Debug Log some statistics about the state of the Database. Include: Number of Contacts and Accounts at the start, Number of Contacts and Accounts currently, and the number of Related Contacts for each Account.
@@ -333,3 +336,20 @@ sf package version create --path force-app --installation-key-bypass --code-cove
 - [Class Delivery Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tbm0000001jntAAA)
 
 sf package version promote --package
+
+# JEST Challenge 7/1/24
+ 
+Create a LWC that can:
+Create a Contact record from a custom form (no OOB components like record-edit-form)
+associate the new contact record with a pre-existing account 
+Write a JEST testing suite for this component following all best practices. 
+- [contactForm](/force-app/main/default/lwc/contactForm/)
+
+# Data Loader Challenge 7/1/24
+ 
+Use data loader to retrieve all Account records in your org with open opportunities with an amount greater than 50k. 
+Use data loader to set the rating field on all these accouns to 'Hot'
+you may need to create some dummy records to test this 
+Post a loom video to screen capture the full clickpath 
+- [Data Loader Walkthrough Link](https://www.loom.com/share/ea8a3ac3818348a8ac26b906f182fbee?sid=e9b02cab-5298-46dd-ac80-0604ca6c9556)
+- [Data Loader Walkthrough video](/force-app/main/default/videos/DataLoaderWalkthrough.mp4)
