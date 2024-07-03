@@ -1,0 +1,23 @@
+Title: Understanding Encapsulation and Abstraction in Object-Oriented Programming
+
+Hello everyone! Today, I will be discussing two fundamental concepts in object-oriented programming: encapsulation and abstraction.
+
+Let's start with encapsulation. Encapsulation is the practice of bundling data, and methods that operate on that data into a single object. 
+It helps protect data by hiding it from direct access outside the class and controlling how it is accessed. 
+This allows rules and constraints to ensure data integrity. 
+
+Here i created a class that not only has information from a sObject record but also meta data about the sObject.
+
+Next, let's discuss abstraction. Abstraction involves hiding complex implementation details and exposing only the essential features of an object. 
+This is achieved using abstract classes and interfaces. 
+An abstract class provides a simplified view of an object, focusing on essential features, which enhances code reusability and maintainability.
+
+A classic example of abstraction is a vehicle. All vehicles have some data in common, making them fundamental features of a vehicle. 
+Functions related to speed can be used by any subclass, whether it's a car, boat, or plane. 
+Additionally, abstract methods can be extended in different ways depending on the specifics. 
+For instance, a car doesn't need to worry about altitude, but for a plane, this is crucial.
+
+In summary, encapsulation and abstraction are key to effective programming. 
+They help make code easier to create and maintain by ensuring data integrity, improving readability, and enhancing reusability.
+
+Thank you for your attention. 
