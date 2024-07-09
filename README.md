@@ -373,3 +373,16 @@ Create a platform event that will trigger when a high priority case is created. 
  
 In your own words, please explain the process of polymorphism and inheritance in regards to Apex. Please re-record your video until you are fully satisfied and you believe you have included all relevant information - be as detailed as possible.
 
+
+# Loom Video Challenge 7/8/24
+ 
+Please post a loom video where you detail the Salesforce security model. 
+You should include details about each level of security and each tool at each level. 
+Make sure you thoroughly explain how record level security effects record access for a user. 
+Re-record the video until you believe you've included all relevant information and you are satisfied with the answer. 
+
+# Challenges 7/9/24
+ 
+Self study Custom settings & Custom metadata types. 
+Complete the badge on Custom Metadata types here: https://trailhead.salesforce.com/content/learn/modules/custom_metadata_types_dec/cmt_overview
+Record a loom video explaining both topics. Re-record the video as many times as it takes to get a satisfying answer

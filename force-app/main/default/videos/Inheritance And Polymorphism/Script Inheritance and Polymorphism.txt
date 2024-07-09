@@ -1,21 +1,31 @@
 Title: Inheritance and Abstraction in Object-Oriented Programming
 
-Hello everyone! Today, I will be discussing inheritance and polymorphism. Two concepts in object oriented programming.
+Hello everyone! Today, I will be discussing inheritance and polymorphism. 
+Two concepts in object oriented programming.
 
-First off we have inheritance. This is similiar to abstraction that i talked about in previous video. 
-This is where a parent class has data and methods that a child object can either use or overright as needed.
+First off we have inheritance. 
 
-Abstract classes would have abstract methods that dont do anything but are required to be replaced 
-preventing the abstract parent from being instantiated. 
-An Animal would be an abstract class having methods that are required but are too vague need to code, such as a makeSound() method.
-A class of Cat could then extend animal method overright the method to make a "Meow".
-And a dog class could then imherite the cat class features and just replace the ones that are different, such as makeSound() to make a "Woof"
-This allows a developer to develope a type of class tree reducing code.
+Abstract classes that i talked about in the previous video are a type of inheritance 
+with the exception that Abstract classes can have abstract methods, 
+which more guidelines for future methods then actual methods by themselves 
+and therefor can not be instantiated.
 
-Polymorphism is a way to overload methods. Allowing the developer to give multiple different versions of code to a method.
+An Animal would be an abstract class having methods 
+that are required but are too vague need to code such as a makeSound() method.
+A class of Cat could then extend animal method to overright the method to make a "Meow".
+And a dog class could then imherite the cat class features 
+and just replace the ones that are different, such as makeSound() to make a "Woof"
+This allows a developer to make a tree of classes reducing code.
+
+Polymorphism is a way to overload methods. 
+Allowing the developer to create multiple different versions of code.
 Since there are multiple different ways to add 2 things together.
-These examples show that they are receiving different types and quantities of input and then outputting the coresponding types.
-This makes it easier to use methods with different names within a class rather then having methods such as AddI, AddD, Add3d, or addstring.
+Integer, Double, 3 doubles, Strings
+These examples show that they are receiving different types and quantities of input ,
+then outputting the coresponding types.
+This makes coding easier then using different methods with the same name within a class 
+rather then having multiple methods doing the same type of thing 
+such as AddInt, Adddouble, Add3Double, or AddString.
 Polymorphism adds flexibility to code allowing it to be used for whatever is needed.
 
 In summary these are 2 more fundamental concepts in object oriented programming that makes complex code easier to make and use.
