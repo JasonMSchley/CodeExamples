@@ -354,17 +354,22 @@ Post a loom video to screen capture the full clickpath
 - [Data Loader Walkthrough Link](https://www.loom.com/share/ea8a3ac3818348a8ac26b906f182fbee?sid=e9b02cab-5298-46dd-ac80-0604ca6c9556)
 - [Data Loader Walkthrough](/force-app/main/default/videos/DataLoaderWalkthrough/)
 
-Loom Video 7/3/24
+# Loom Video 7/3/24
  
 In your own words, please explain the process of encapsulation and abstraction in regards to Apex. Please re-record your video until you are fully satisfied and you believe you have included all relevant information - be as detailed as possible.
 - [Encapsulation and Abstraction Link](https://www.loom.com/share/48e5bd0e2bec4da7a48793abb224e012?sid=affa84cb-6b20-4b42-8a42-8657e5311610)
 - [Encapsulation and Abstraction](/force-app/main/default/videos/DataLoaderWalkthrough/)
 
  
-Platform Event Challenge 7/3/24
+# Platform Event Challenge 7/3/24
  
 Create a platform event that will trigger when a high priority case is created. Next, subscribe to the platform event from within a Lightning Web Component. You should display the following on the component, provided from data of the platform event: "HIGH Priority Alert: Case Number:CASENUMBERHERE"
 - [High_Priority_Case_Event__e](/force-app/main/default/objects/High_Priority_Case_Event__e/)
 - [CaseTrigger.trigger](/force-app/main/default/triggers/CaseTrigger.trigger)
 - [CaseTriggerHelper.cls](/force-app/main/default/classes/CaseTriggerHelper.cls)
-- [highPriorityCaseAlert](/force-app/main/default/lwc/HighPriorityCaseAlert/)
+- [highPriorityCaseAlert](/force-app/main/default/lwc/HighPriorityCaseAlert/)Loom Challenge 7/5/24
+ 
+# Loom Challenge 7/5/24
+ 
+In your own words, please explain the process of polymorphism and inheritance in regards to Apex. Please re-record your video until you are fully satisfied and you believe you have included all relevant information - be as detailed as possible.
+

@@ -20,4 +20,4 @@ For instance, a car doesn't need to worry about altitude, but for a plane, this 
 In summary, encapsulation and abstraction are key to effective programming. 
 They help make code easier to create and maintain by ensuring data integrity, improving readability, and enhancing reusability.
 
-Thank you for your attention. 
+Thank you for your time. 
