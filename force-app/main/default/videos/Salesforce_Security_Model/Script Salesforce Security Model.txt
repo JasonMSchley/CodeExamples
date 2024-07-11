@@ -1,0 +1,27 @@
+Salesforce Security Model  
+
+Hello, today i will be taking a quick look at Salesforce security model.
+
+At the start, Salesforce offers Organization-Level Security 
+with measures like login IP ranges, login hours, and trusted IPs to control access to the org. 
+Salesforce also has multiple ways to enhance login security such as password restrictions and authentication keys.
+
+Object-Level Security through profiles and permission sets determines which objects users can access 
+and what actions they can perform, such as create, read, update, or delete.
+
+Field-Level Security further refines access by specifying which fields within objects users can see or edit. 
+Record-Level Security uses mechanisms like role hierarchies, sharing rules, and manual sharing 
+to control data visibility at the record level, 
+ensuring users can only access records they need for their role.
+
+Each mechanism starts off most restrictive and adds additional access as needed by the user.
+
+These restrictions are enforced in many ways, 
+page layouts may change what is displayed but the fields themselves still need to have security enforced on them.
+code needs to include things such as "with sharing" and "stripInnaccessible"
+
+Additionally there are other features not mentioned frequently such as
+Salesforce provides Audit Trail and Field History Tracking to monitor changes and ensure accountability. 
+
+In Summary Salesforce security model is layered so that users only have access to the information that they need for their job helping to mantain data integrity.
+Thank you.

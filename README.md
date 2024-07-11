@@ -372,6 +372,9 @@ Create a platform event that will trigger when a high priority case is created. 
 # Loom Challenge 7/5/24
  
 In your own words, please explain the process of polymorphism and inheritance in regards to Apex. Please re-record your video until you are fully satisfied and you believe you have included all relevant information - be as detailed as possible.
+- [Inheritance and Polymorphism Link](https://www.loom.com/share/b346e2ee92a248bc86a2c114af506e1a?sid=27f38f2d-d344-40a1-b04d-8c14703d55ce)
+- [Inheritance and Polymorphism](/force-app/main/default/videos/Inheritance_And_Polymorphism/)
+
 
 
 # Loom Video Challenge 7/8/24
@@ -380,9 +383,15 @@ Please post a loom video where you detail the Salesforce security model.
 You should include details about each level of security and each tool at each level. 
 Make sure you thoroughly explain how record level security effects record access for a user. 
 Re-record the video until you believe you've included all relevant information and you are satisfied with the answer. 
+- [Salesforce Security Model Link](https://www.loom.com/share/b78b52a82143401399fe76d8118cebed?sid=469616e1-4110-47ef-93d4-8d2fac8aede1)
+- [Salesforce Security Model](/force-app/main/default/videos/Salesforce_Security_Model/)
 
 # Challenges 7/9/24
  
 Self study Custom settings & Custom metadata types. 
 Complete the badge on Custom Metadata types here: https://trailhead.salesforce.com/content/learn/modules/custom_metadata_types_dec/cmt_overview
 Record a loom video explaining both topics. Re-record the video as many times as it takes to get a satisfying answer
+- [customMetadata](/force-app/main/default/customMetadata/)
+- [flow](/force-app/main/default/flows/Custom_Metadata_types_in_Flows.flow-meta.xml)
+- [Salesforce Security Model Link](https://www.loom.com/share/db8a84fb51fb4b4e9f1fc3e86a6b331c?sid=e8278db7-0b36-4d42-8977-3e7e7f71869f)
+- [Salesforce Security Model](/force-app/main/default/videos/Salesforce_Security_Model/)
