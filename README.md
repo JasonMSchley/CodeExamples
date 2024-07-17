@@ -52,7 +52,7 @@ SOQL, SOSL and DML
 These challenges should be done in a Trailhead Playground, not a Scratch Org! That way, you have records to work with.
 - [DataLordHelper.cls](/force-app/main/default/classes/DataLordHelper.cls)
 - [DataLordController.cls](/force-app/main/default/classes/DataLordController.cls)
-- [DataLord/page](/force-app/main/default/classespages/DataLord.page)
+- [DataLord/page](/force-app/main/default/pages/DataLord.page)
 
 ## SOQL
 All these challenges can be completed in a single line using a cleverly structured SOQL query. Take the extra challenge to come up with the solution that uses the lowest number of lines of code!
