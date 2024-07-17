@@ -1,0 +1,17 @@
+Custom Settings and Custom Metadata in Salesforce 
+
+Both custom settings and custom metadata can be used to store list data within an org
+These both can be used for storing information referenced in other locations almost like a public variable.
+
+Custom setting is limited in that it is defined in an org and cant be easily transfered to another org
+it can not be added to packages or change sets.
+It is stored similiar to custom object in that the format of the object is created 
+but the data itself is stored on a record.
+
+Custom metadata is stored as a single item with data stored as part of the object and can be used in packages or change sets.
+It also supports lookup between different custom metadata types.
+
+In general it is recommended to use custom metadata unless you need to use specific features of custom settings
+such as allowing hierarchy based seetings.
+
+Thank you.

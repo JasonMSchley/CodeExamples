@@ -52,7 +52,7 @@ SOQL, SOSL and DML
 These challenges should be done in a Trailhead Playground, not a Scratch Org! That way, you have records to work with.
 - [DataLordHelper.cls](/force-app/main/default/classes/DataLordHelper.cls)
 - [DataLordController.cls](/force-app/main/default/classes/DataLordController.cls)
-- [DataLord/page](/force-app/main/default/classes/DataLord.page)
+- [DataLord/page](/force-app/main/default/classespages/DataLord.page)
 
 ## SOQL
 All these challenges can be completed in a single line using a cleverly structured SOQL query. Take the extra challenge to come up with the solution that uses the lowest number of lines of code!
@@ -344,6 +344,7 @@ Create a Contact record from a custom form (no OOB components like record-edit-f
 associate the new contact record with a pre-existing account 
 Write a JEST testing suite for this component following all best practices. 
 - [contactForm](/force-app/main/default/lwc/contactForm/)
+- [ContactFormController.cls](/force-app/main/default/class/ContactFormController.cls)
 
 # Data Loader Challenge 7/1/24
  
@@ -367,14 +368,13 @@ Create a platform event that will trigger when a high priority case is created. 
 - [High_Priority_Case_Event__e](/force-app/main/default/objects/High_Priority_Case_Event__e/)
 - [CaseTrigger.trigger](/force-app/main/default/triggers/CaseTrigger.trigger)
 - [CaseTriggerHelper.cls](/force-app/main/default/classes/CaseTriggerHelper.cls)
-- [highPriorityCaseAlert](/force-app/main/default/lwc/HighPriorityCaseAlert/)Loom Challenge 7/5/24
+- [highPriorityCaseAlert](/force-app/main/default/lwc/HighPriorityCaseAlert/)
  
 # Loom Challenge 7/5/24
  
 In your own words, please explain the process of polymorphism and inheritance in regards to Apex. Please re-record your video until you are fully satisfied and you believe you have included all relevant information - be as detailed as possible.
 - [Inheritance and Polymorphism Link](https://www.loom.com/share/b346e2ee92a248bc86a2c114af506e1a?sid=27f38f2d-d344-40a1-b04d-8c14703d55ce)
 - [Inheritance and Polymorphism](/force-app/main/default/videos/Inheritance_And_Polymorphism/)
-
 
 
 # Loom Video Challenge 7/8/24
