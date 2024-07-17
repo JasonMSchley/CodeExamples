@@ -1,3 +1,4 @@
+- [Most recent resume](/Jason Schley_Resume.pdf)
 - [Salesforce Trailhead](https://www.salesforce.com/trailblazer/jasonmschley)
 - [Linkedin](https://www.linkedin.com/in/jason-schley/)
 
